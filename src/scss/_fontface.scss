@@ -1,0 +1,91 @@
+/* fontface */ 
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Black";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-black-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-black-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Bold";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-bold-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-bold-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Extrabold";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-extrabold-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-extrabold-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Extralight";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-extralight-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-extralight-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Light";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-light-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-light-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Medium";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-medium-webfont.woff2") format("woff2"),
+        url("../assets/fonts/worksans-medium-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Regular";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-regular-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Semibold";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-semibold-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-semibold-webfont.woff") format("woff");
+}
+
+@font-face {
+  text-rendering: optimizeLegibility;
+  font-family: "WorkSans Thin";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url("../assets/fonts/worksans-thin-webfont.woff2") format("woff2"),
+  url("../assets/fonts/worksans-thin-webfont.woff") format("woff");
+}
+
