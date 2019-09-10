@@ -37,3 +37,11 @@ p {
   padding: 0;
   font-weight: unset;
 }
+
+button,
+select,
+input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
