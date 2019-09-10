@@ -2,9 +2,23 @@
 @import "./reset";
 @import "./variables";
 
+*:focus {
+  outline: .125rem auto $viking;
+  outline-style: solid;
+}
+
 .app {
+  background-color: $swans-down;
+  min-height: 100vh; // sass-lint:disable-line property-units
+  color: $sherpa-blue;
+}
+
+.section-container {
   display: flex;
   flex: 1 1 0;
   flex-flow: column nowrap;
-  height: 100vh; // sass-lint:disable-line property-units
+  align-items: center;
+  padding: 4.5rem 0;
 }
+
+

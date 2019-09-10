@@ -1,0 +1,18 @@
+@import "../../scss/variables";
+
+.umean {
+  &__brand {
+    align-self: center;
+    line-height: .8;
+    font-size: 3.38rem;
+
+    &--highlighted {
+      font-family: "Worksans Regular";
+    }
+  }
+
+  &__claim {
+    align-self: center;
+    font-size: .75rem;
+  }
+}

@@ -1,0 +1,117 @@
+@import "../../scss/variables";
+
+.form-container {
+  align-self: center;
+  padding: 4.5rem 0;
+}
+
+.search-word-form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  margin-bottom: 1.125rem;
+}
+
+.form  {
+  &__group {
+    display: flex;
+    flex-flow: column wrap;
+
+    &.select {
+      position: relative;
+    }
+  }
+
+  &__label {
+    visibility: hidden;
+  }
+
+  &__text-input,
+  &__select-input {
+    border: 0;
+    border-radius: 0;
+    background-color: $white;
+    padding: .5rem 2rem .5rem 1rem;
+    height: 2.5rem;
+    font-family: "WorkSans Light";
+    font-size: 1rem;
+
+    &::placeholder {
+      padding: .5rem 0;
+      color: $manatee;
+    }
+
+    &:focus {
+      &::placeholder {
+        color: $tundora;
+      }
+    }
+  }
+
+  &__select-input {
+    border: .0125rem solid $swans-down;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    color: $tundora;
+
+    &--icon {
+      position: absolute;
+      right: 1rem;
+      bottom: .75rem;
+      color: $sherpa-blue;
+    }
+  }
+}
+
+.results {
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0 2.5rem 3.5rem;
+  }
+
+  &__card {
+    margin: 0 .5rem 1rem;
+    border-radius: 1rem;
+    background-color: $translucid-white;
+    padding: 1.5rem 1.5rem 1rem;
+    width: 12.6rem;
+
+    &:hover {
+      background-color: $white;
+    }
+  }
+
+  &__key {
+    font-family: "WorkSans Semibold";
+    font-size: 1rem;
+  }
+
+  &__content {
+    font-size: .75rem;
+
+    &--highlighted {
+      margin-left: .25rem;
+      font-family: "WorkSans Regular";
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+
+    &--icon {
+      margin: 1rem 0 0;
+      width: 1.5rem;
+      height: auto;
+      color: $viking;
+
+      &:hover {
+        margin: .85rem 0 0;
+        width: 1.65rem;
+      }
+    }
+  }
+}
+
