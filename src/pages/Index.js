@@ -5,7 +5,7 @@ import SearchWordForm from '../components/SearchWordForm/SearchWordForm';
 function Home() {
   return (
     <div>
-      <SearchWordForm></SearchWordForm>
+      <SearchWordForm/>
     </div>
   )
 }

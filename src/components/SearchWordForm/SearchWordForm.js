@@ -109,7 +109,7 @@ class SearchWordForm extends Component {
           </form>
         </div>
         <ul className='results__list'>
-          {wordSemantics ? (
+          { wordSemantics ? (
             wordSemantics.map((concurrence) => {
               return (
                 <li 
@@ -122,14 +122,14 @@ class SearchWordForm extends Component {
                   />
                   <p 
                     className='results__content'
-                  > strength:
+                  > strength
                     <span
                       className='results__content--highlighted'
                       children={concurrence.strength}
                     />
                   </p>
                   <Link 
-                    to='/detail' 
+                    to={ `/detail/${concurrence.word}` }
                     aria-label='By clicking you will navigate to another page'
                     className='results__link'
                     children={<IoMdInformationCircle className='results__link--icon'/>}

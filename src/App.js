@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './scss/App.scss';
 
 import Index from './pages/Index';
+import Detail from './pages/Detail';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
       <Switch>
         <Route exact path='/' component={Index} />
+        <Route exact path='/detail/:word' component={Detail} />
       </Switch>
     </Router>
     </div>

@@ -16,7 +16,9 @@ class WordService {
   }
 
   async getWordInfo(word) {
-    const response = await this.word.get(`${word}/info?`);
+    const auth = 'apiKey=8c79736f393ab6eff4a864fcfa23344c'
+    const language= 'en'
+    const response = await this.word.get(`${language}/${word}/info?${auth}`);
     return response;
   }
 }
