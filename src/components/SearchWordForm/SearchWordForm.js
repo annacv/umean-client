@@ -9,9 +9,19 @@ import './searchWordForm.scss'
 
 class SearchWordForm extends Component {
   state = {
-    language: 'en',
+    availableLanguages: [],
+    language: '',
     word: '',
     wordSemantics: []
+  }
+
+  componentDidMount() {
+    wordService.getAvailableLanguages()
+      .then((data) => {
+        this.setState({
+          availableLanguages: data.data
+        })
+      })
   }
 
   handleInputChange = (event) => {
@@ -37,16 +47,7 @@ class SearchWordForm extends Component {
       }
     }
 
-    let queryLanguage = '';
-    let queryWord = '';
-    let queryString = '';
-
-    params.forEach((paramObj) => {
-      paramObj.keyName='language' ? 
-        queryLanguage = `${paramObj.value}`
-        : queryWord =`${paramObj.keyName}=${paramObj.value}`
-      return queryString += queryLanguage + '/' + queryWord;
-    })
+    let queryString = this.state.language + '/' + this.state.word;
 
     wordService.getWordSemantics(queryString)
       .then(({ data }) => {
@@ -57,7 +58,7 @@ class SearchWordForm extends Component {
   }
 
   render() {
-    const {language, word, wordSemantics} = this.state
+    const { availableLanguages, word, wordSemantics } = this.state
 
     return (
       <section className='section-container'>
@@ -81,10 +82,14 @@ class SearchWordForm extends Component {
                 required
               > 
                 <option 
-                  value='en'
-                  children='Language'
-                > {language}
-                </option>
+                  value=''
+                  children='Choose language'
+                />
+                { availableLanguages ? (
+                   availableLanguages.map((language) => {
+                     return <option default value={language.toLowerCase()} key={language}>{language.toLowerCase()}</option>
+                   })) : 'en'
+                }
               </select>
               <MdExpandMore className='form__select-input--icon'/>
             </div>
@@ -120,7 +125,7 @@ class SearchWordForm extends Component {
                     className='results__key'
                     children={concurrence.word}
                   />
-                  <p 
+                  <p
                     className='results__content'
                   > strength
                     <span
@@ -132,7 +137,9 @@ class SearchWordForm extends Component {
                     to={ `/detail/${concurrence.word}` }
                     aria-label='By clicking you will navigate to another page'
                     className='results__link'
-                    children={<IoMdInformationCircle className='results__link--icon'/>}
+                    children={<IoMdInformationCircle className='results__link--icon'
+                    />
+                  }
                   />
                 </li>
               )

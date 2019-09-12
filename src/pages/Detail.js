@@ -29,10 +29,6 @@ class Detail extends Component {
       })
   }
 
-  goToPreviousPage = () => {
-    this.props.history.goBack();
-  }
-
   render() {
     const { word, additionalInformation, frequency, documentFrequency, absoluteRank, relativeRank } = this.state
     return (
@@ -67,9 +63,6 @@ class Detail extends Component {
             <p className='detail__data-item--highlighted'>{ relativeRank }</p>
           </li>
         </ul>
-        <div className='user-actions'>
-          <button onClick={this.goToPreviousPage}>Try another search</button>
-        </div>
       </div>
     )
   }

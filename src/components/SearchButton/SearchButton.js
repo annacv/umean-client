@@ -2,7 +2,7 @@ import React from 'react'
 import { MdSearch } from "react-icons/md"
 import './searchButton.scss'
 
-function SearchButton(props) {
+function SearchButton() {
   return (
     <button 
       className='btn'
