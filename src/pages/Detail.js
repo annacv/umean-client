@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import wordService from '../services/word-service'
+import SearchButton from '../components/SearchButton/SearchButton'
 import './detail.scss';
 
 class Detail extends Component {
@@ -40,6 +41,11 @@ class Detail extends Component {
       })
   }
 
+  tryAnotherSearch = () => {
+    this.props.history.goBack();
+  }
+
+
   render() {
     const { word, additionalInformation, frequency, documentFrequency, absoluteRank, relativeRank } = this.state
     return (
@@ -76,6 +82,11 @@ class Detail extends Component {
             <p className='detail__data-item--highlighted'>{ relativeRank }</p>
           </li>
         </ul>
+        <SearchButton 
+          className='btn btn-search-again'
+          children='Search again'
+          onClick={this.tryAnotherSearch}
+        />
       </div>
     )
   }

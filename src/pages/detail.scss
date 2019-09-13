@@ -4,8 +4,13 @@
   &__meaningful-content,
   &__data-content {
     display: flex;
-    padding: 4.5rem 0;
+    flex-flow: row wrap;
+    padding: 2.5rem 0;
     width: 100%;
+
+    @media (min-width: 768px) {
+      padding: 4.5rem 0;
+    }
   }
 
   &__meaningful-content {
@@ -31,7 +36,9 @@
   }
 
   &__data-item {
+    margin-bottom: 1.5rem;
     padding: 0 2rem;
+    text-align: center;
 
     &--label {
       font-family: "WorkSans Semibold";
@@ -39,6 +46,15 @@
 
     &--highlighted {
       font-size: 2.5rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+      text-align: left;
     }
   }
 }

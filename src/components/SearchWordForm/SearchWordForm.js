@@ -5,6 +5,7 @@ import SearchButton from '../SearchButton/SearchButton'
 import UmeanBrand from '../UmeanBrand/UmeanBrand'
 import { MdExpandMore } from 'react-icons/md'
 import {IoMdInformationCircle} from 'react-icons/io'
+import { MdSearch } from "react-icons/md"
 import './searchWordForm.scss'
 
 class SearchWordForm extends Component {
@@ -84,7 +85,7 @@ class SearchWordForm extends Component {
               > 
                 <option 
                   value=''
-                  children='Choose language'
+                  children='Language'
                 />
                 { availableLanguages ? (
                    availableLanguages.map((language) => {
@@ -105,13 +106,16 @@ class SearchWordForm extends Component {
                 id='word'
                 type='text'
                 name='word'
-                placeholder='Enter your word'
+                placeholder='Your word'
                 value={word}
                 onChange={this.handleInputChange}
                 required
               />
             </div>
-            <SearchButton/>
+            <SearchButton
+              className='btn'
+              children={<MdSearch className='btn--icon'/>}
+            />
           </form>
         </div>
         <ul className='results__list'>

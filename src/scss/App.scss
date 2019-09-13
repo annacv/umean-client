@@ -18,8 +18,12 @@
   flex: 1 1 0;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 4.5rem 0;
+  padding: 2.5rem 0;
   width: 100%;
+
+  @media (min-width: 768px) {
+    padding: 4.5rem 0;
+  }
 }
 
 

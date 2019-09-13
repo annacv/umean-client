@@ -2,7 +2,11 @@
 
 .form-container {
   align-self: center;
-  padding: 4.5rem 0;
+  padding: 2.5rem .875rem;
+
+  @media (min-width: 768px) {
+    padding: 4.5rem 0;
+  }
 }
 
 .search-word-form {
@@ -32,9 +36,14 @@
     border-radius: 0;
     background-color: $white;
     padding: .5rem 2rem .5rem 1rem;
+    width: 7.85rem;
     height: 2.5rem;
     font-family: "WorkSans Light";
     font-size: 1rem;
+
+    @media (min-width: 768px) {
+      width: unset;
+    }
 
     &::placeholder {
       padding: .5rem 0;
@@ -69,15 +78,24 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 0 2.5rem 3.5rem;
+    padding: 0 .875rem 3.5rem;
+
+    @media (min-width: 768px) {
+      padding: 0 2.5rem 3.5rem;
+    }
   }
 
   &__card {
-    margin: 0 .5rem 1rem;
+    margin: 0 0 1rem;
     border-radius: 1rem;
     background-color: $translucid-white;
     padding: 1.5rem 1.5rem 1rem;
-    width: 12.6rem;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      margin: 0 .5rem 1rem;
+      width: 12.6rem;
+    }
 
     &:hover {
       background-color: $white;
