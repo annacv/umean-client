@@ -55,7 +55,6 @@ class SearchWordForm extends Component {
           wordSemantics: data.semanticallySimilarWords,
           language: this.state.language.toLowerCase()
         })
-        console.log(this.state.language)
       })
   }
 
