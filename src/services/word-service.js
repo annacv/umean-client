@@ -7,7 +7,7 @@ class WordService {
 
   constructor() {
     this.word = axios.create({
-      baseURL: 'https://api.gavagai.se/v3',
+      baseURL: process.env.REACT_APP_BACKEND_DOMAIN,
       withCredentials: false
     })
   }
@@ -25,9 +25,9 @@ class WordService {
     return response;
   }
 
-  async getWordInfo(word) {
+  async getWordInfo(language, word) {
     const { auth } = this.state
-    const response = await this.word.get(`/lexicon/en/${word}/info?${auth}`);
+    const response = await this.word.get(`/lexicon/${language}/${word}/info?${auth}`);
     return response;
   }
 }
