@@ -72,3 +72,6 @@ Your app is ready to be deployed!
 ### URls for the project repo and deploy:
 [Link Repo](https://github.com/annacv/umean-client) |
 [Link Deploy](https://https://u-mean.firebaseapp.com/)
+
+### URls for testing the API:
+[Postman](https://www.getpostman.com/collections/e0712fdf1d2e4fc366d3) |
