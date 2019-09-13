@@ -1,7 +1,9 @@
-# umean API
+# umean
+>A Semantic Search Engine
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 After forking and cloning this repository, run the following commands:
+
 ```
   cd umean-api
   npm install
@@ -65,3 +67,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+
+### URls for the project repo and deploy:
+[Link Repo](https://github.com/annacv/umean-client) |
+[Link Deploy](https://https://u-mean.firebaseapp.com/)
