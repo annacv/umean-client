@@ -14,18 +14,29 @@ class Detail extends Component {
   }
 
   componentDidMount() {
-    const { word } = this.props.match.params
-    wordService.getWordInfo(word)
+    const { language, word } = this.props.match.params
+    wordService.getWordInfo(language, word)
       .then((data) => {
-        this.setState({
-          concurrence: data.data,
-          word: data.data.word,
-          additionalInformation: data.data.additionalInformation.link,
-          frequency: data.data.frequency,
-          documentFrequency: data.data.documentFrequency,
-          absoluteRank: data.data.absoluteRank,
-          relativeRank: data.data.relativeRank
-        })
+        { data.data.additionalInformation ? 
+          this.setState({
+            concurrence: data.data,
+            word: data.data.word,
+            additionalInformation: data.data.additionalInformation.link,
+            frequency: data.data.frequency,
+            documentFrequency: data.data.documentFrequency,
+            absoluteRank: data.data.absoluteRank,
+            relativeRank: data.data.relativeRank
+          }) :
+          this.setState({
+            concurrence: data.data,
+            word: data.data.word,
+            additionalInformation: '',
+            frequency: data.data.frequency,
+            documentFrequency: data.data.documentFrequency,
+            absoluteRank: data.data.absoluteRank,
+            relativeRank: data.data.relativeRank
+          })
+        }
       })
   }
 
@@ -38,12 +49,14 @@ class Detail extends Component {
             className='detail__word'
             children= { word }
           />
-          <Link 
-            to= {additionalInformation } 
-            aria-label= 'By clicking you will navigate to another page' 
-            className='detail__link'
-            children= { additionalInformation }
-          />
+          { additionalInformation ? 
+            <Link 
+              to= {additionalInformation } 
+              aria-label= 'By clicking you will navigate to another page' 
+              className='detail__link'
+              children= { additionalInformation }
+            /> : null
+          }
         </div>
         <ul className='detail__data-content'>
           <li className='detail__data-item'>

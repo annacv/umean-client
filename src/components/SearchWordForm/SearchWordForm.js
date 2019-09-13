@@ -52,8 +52,10 @@ class SearchWordForm extends Component {
     wordService.getWordSemantics(queryString)
       .then(({ data }) => {
         this.setState({
-          wordSemantics: data.semanticallySimilarWords
+          wordSemantics: data.semanticallySimilarWords,
+          language: this.state.language.toLowerCase()
         })
+        console.log(this.state.language)
       })
   }
 
@@ -87,7 +89,7 @@ class SearchWordForm extends Component {
                 />
                 { availableLanguages ? (
                    availableLanguages.map((language) => {
-                     return <option default value={language.toLowerCase()} key={language}>{language.toLowerCase()}</option>
+                     return <option default onChange={this.handleInputChange} value={language.toLowerCase()} key={language}>{language.toLowerCase()}</option>
                    })) : 'en'
                 }
               </select>
@@ -134,7 +136,7 @@ class SearchWordForm extends Component {
                     />
                   </p>
                   <Link 
-                    to={ `/detail/${concurrence.word}` }
+                    to={ `/detail/${this.state.language}/${concurrence.word}` }
                     aria-label='By clicking you will navigate to another page'
                     className='results__link'
                     children={<IoMdInformationCircle className='results__link--icon'
