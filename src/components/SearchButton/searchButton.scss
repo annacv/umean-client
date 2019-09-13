@@ -26,5 +26,21 @@
       width: 1.45rem;
     }
   }
+}
 
+.btn-search-again {
+  margin: 2.5rem 0;
+  border-radius: 1.5rem;
+  background-color: $sherpa-blue;
+  padding: .65rem 1rem;
+  width: auto;
+  color: $white;
+  font-family: "WorkSans Regular";
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $viking;
+    color: $sherpa-blue;
+    font-family: "WorkSans Semibold";
+  }
 }
