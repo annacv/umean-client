@@ -18,9 +18,8 @@ class Detail extends Component {
     const { language, word } = this.props.match.params
     wordService.getWordInfo(language, word)
       .then((data) => {
-        { data.data.additionalInformation ? 
+        data.data.additionalInformation ? 
           this.setState({
-            concurrence: data.data,
             word: data.data.word,
             additionalInformation: data.data.additionalInformation.link,
             frequency: data.data.frequency,
@@ -29,7 +28,6 @@ class Detail extends Component {
             relativeRank: data.data.relativeRank
           }) :
           this.setState({
-            concurrence: data.data,
             word: data.data.word,
             additionalInformation: '',
             frequency: data.data.frequency,
@@ -37,14 +35,8 @@ class Detail extends Component {
             absoluteRank: data.data.absoluteRank,
             relativeRank: data.data.relativeRank
           })
-        }
       })
   }
-
-  tryAnotherSearch = () => {
-    this.props.history.goBack();
-  }
-
 
   render() {
     const { word, additionalInformation, frequency, documentFrequency, absoluteRank, relativeRank } = this.state
@@ -84,13 +76,12 @@ class Detail extends Component {
         </ul>
         <SearchButton 
           className='btn btn-search-again'
-          children='Search again'
-          onClick={this.tryAnotherSearch}
+          children={<Link to='/'>Search again</Link>}
         />
       </div>
     )
   }
 }
 
-export default Detail
+export default Detail;
 
